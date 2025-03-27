@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1690321607902-d97c4b909a23?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3') no-repeat center center/cover;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Logo styles */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Space between logo and buttons */
+}
+
+.logo {
+    width: 200px; /* Increased size */
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Centered container */
+.container {
+    display: flex;
+    gap: 30px; /* Space between buttons */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bigger buttons */
+.btn {
+    text-decoration: none;
+    font-size: 24px; /* Increased size */
+    font-weight: 600;
+    padding: 20px 60px; /* Bigger padding */
+    border: 4px solid white;
+    color: white;
+    background: transparent;
+    border-radius: 20px; /* More rounded */
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Mouse glow effect */
+.glow {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0) 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease-in-out;
+    filter: blur(30px);
+}
+
+/* Hide glow when hovering on buttons */
+.btn:hover ~ .glow {
+    opacity: 0;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.8;
+}
+
+a:link {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="icon" type="image/x-icon" href="https://gbatemp.net/attachments/394652/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: url('https://images.unsplash.com/photo-1690321607902-d97c4b909a23?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 16px;
+            width: 95%;
+            max-width: 600px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .faq {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 0;
+            cursor: pointer;
+        }
+
+        .faq:last-child {
+            border-bottom: none;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            font-size: 18px;
+            line-height: 1.6;
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            padding-top: 5px;
+        }
+
+        .faq.active .answer {
+            max-height: 150px;
+            opacity: 1;
+        }
+
+        .icon {
+            transition: transform 0.3s ease-in-out;
+            font-size: 22px;
+        }
+
+        .faq.active .icon {
+            transform: rotate(180deg);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 18px;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            opacity: 0.6;
+        }
+
+         a:link {
+         color: rgb(0, 195, 255);
+         background-color: transparent;
+         text-decoration: none;
+         }
+
+         a:visited {
+         color: rgb(0, 162, 255);
+         background-color: transparent;
+         text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+
+<h1 class="title">FAQ</h1>
+
+<div class="container">
+    <div class="faq">
+        <div class="question">
+            <span>Zakaj piše, da spletna stran ni varna?</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="answer">
+            Moja spletna stran trenutno nima SSL certifikata, zato brskalnik prikazuje to opozorilo. Kljub temu je stran popolnoma varna za brskanje, saj ne zbira nobenih osebnih podatkov ali gesel (razen geslo za Jellyfin). Na žalost trenutno ne morem pridobiti certifikata, vendar to ne vpliva na samo delovanje strani.
+        </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+            <span>Kako dostopam do Jellyfina na drugih napravah?</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="answer">
+            Jellyfin lahko dostopate na več načinov, odvisno od naprave, ki jo uporabljate. Celoten seznam aplikacij najdete <a href="https://github.com/awesome-jellyfin/awesome-jellyfin/blob/main/CLIENTS.md" target="_blank" >tukaj</a>.
+        </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+            <span>Kaj je Jellyfin?</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="answer">
+         Jellyfin je storitev, ki jo uporabljam za shranjevanje, organiziranje in predvajanje vseh filmov in serij, ki so na voljo na moji spletni strani. Ko kliknete na gumb GLEJ, boste lahko dostopali do vsebine, ki jo gostim preko Jellyfina.
+        </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+            <span>Kako dolgo traja, da se Jellyfin naloži?</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="answer">
+         Za pridobitev gesla za Jellyfin me lahko kontaktirate preko mojih socialnih omrežij, ki so dostopna tukaj: <a href="https://linktr.ee/maticcukmikeln" target="_blank" >tukaj</a>.
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p><a href="https://linktr.ee/maticcukmikeln" target="_blank">Made with ❤️ by Matic Čuk Mikeln</a></p>
+    <p><a href="index.html">Home</a></p>
+</div>
+
+<script>
+    document.querySelectorAll('.faq').forEach(faq => {
+        faq.addEventListener('click', () => {
+            faq.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
